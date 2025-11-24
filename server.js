@@ -12,7 +12,7 @@ const app = express();
  
 // Middleware configuration
 const corsOptions = {
-    origin: "http://localhost:8081",
+    origin: "http://localhost:8080",
 };
  
 // Middlewares

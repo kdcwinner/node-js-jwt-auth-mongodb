@@ -25,13 +25,15 @@ CORS, rate-limiter for security
 
 
 git clone <repo-url>
+
 cd node-js-jwt-auth-mongodb
+
 npm install
 
-PORT=4000
+PORT=8080
 MONGO_URI=mongodb://localhost:27017/node-js-jwt-auth-mongodb
 JWT_SECRET=yourstrongsecret
 
 
 npm start
-http://localhost:3000
+http://localhost:8080
