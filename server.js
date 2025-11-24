@@ -1,6 +1,9 @@
 // server.js
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
+import helmet from "helmet";
+import rateLimit from "express-rate-limit";
 import db from "./app/models/index.js";
 import authRoutes from "./app/routes/auth.routes.js";
 import userRoutes from "./app/routes/user.routes.js";
@@ -12,14 +15,25 @@ const corsOptions = {
     origin: "http://localhost:8081",
 };
  
+// Middlewares
+app.use(helmet());
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
- 
+
+// Basic rate limiter 15 minutes
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100
+});
+app.use(limiter);
+
 // Simple route for testing
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to the Node.js JWT Authentication application." });
 });
+
+
  
 // Routes
 app.use("/api/auth", authRoutes);
