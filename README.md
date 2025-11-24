@@ -31,7 +31,9 @@ cd node-js-jwt-auth-mongodb
 npm install
 
 PORT=8080
+
 MONGO_URI=mongodb://localhost:27017/node-js-jwt-auth-mongodb
+
 JWT_SECRET=yourstrongsecret
 
 
