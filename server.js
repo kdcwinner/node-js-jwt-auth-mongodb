@@ -14,7 +14,7 @@ const app = express();
 const corsOptions = {
     origin: "http://localhost:8080",
 };
-  
+ 
 // Middlewares
 app.use(helmet());
 app.use(cors(corsOptions));
