@@ -10,7 +10,7 @@ import userRoutes from "./app/routes/user.routes.js";
  
 const app = express();
  
-// Middleware configuration
+// CORS Middleware configuration
 const corsOptions = {
     origin: "http://localhost:8080",
 };
